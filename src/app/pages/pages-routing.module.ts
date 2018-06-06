@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import {AuthService} from '../auth.service';
 
 const routes: Routes = [{
   path: '',
@@ -23,6 +24,7 @@ const routes: Routes = [{
   }, {
     path: 'charts',
     loadChildren: './charts/charts.module#ChartsModule',
+    canActivate: [AuthService]
   }, {
     path: 'editors',
     loadChildren: './editors/editors.module#EditorsModule',
@@ -48,6 +50,7 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [AuthService]
 })
 export class PagesRoutingModule {
 }
