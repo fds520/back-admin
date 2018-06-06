@@ -1,0 +1,35 @@
+{
+  "app": {
+    "title": "FManager"
+  },
+  "auth": {
+    "login": {
+      "signIn": "Sign In",
+      "signTitle": "Hello! Sign in with your email",
+      "failed": "Oh snap!",
+      "success": "Hooray!",
+      "emailAddress": "Email address",
+      "emailRequired": "Email is required!",
+      "emailError": "Email should be the real one!",
+      "passwordRequired": "Password is required!",
+      "passwordLengthError": "Password length error!",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot Password?",
+      "connectWith": "Or connect with:",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign Up",
+      "loginError": "Login Email combination is not correct, please try again.",
+      "loginSuccess": "You have been successfully logged in."
+    }
+  },
+  "client": {
+    "main": {
+      "aboutSystem": "About This System",
+      "description":" Goal is to assemble together and connect the most awesome features and libraries creating an efficient ecosystem to speed up and simplify the development.",
+      "uiKit":"UI KIT",
+      "uiDesc": "We carefully crafted the most important components you need to bootstrap your development. Our UI Kit is framework-agnostic. ",
+      "authModel":"AUTH & SECURITY MODULE",
+      "authModelDesc":"Now front-end authentication and authorization are just a matter of a configuration. Auth & Security Concepts."
+    }
+  }
+}

@@ -2,7 +2,9 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {TranslateModule} from '@ngx-translate/core';
+import { NgxLoginComponent } from './components/auth/login.component';
+import { NgxRegisterComponent } from './components/auth/register.component';
 import {
   NbActionsModule,
   NbCardModule,
@@ -20,7 +22,7 @@ import {
 } from '@nebular/theme';
 
 import { NbSecurityModule } from '@nebular/security';
-
+import {NbAuthModule} from '@nebular/auth';
 import {
   FooterComponent,
   HeaderComponent,
@@ -40,8 +42,8 @@ import {
 } from './layouts';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
-
-const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
+import {RouterModule} from '@angular/router';
+const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, TranslateModule];
 
 const NB_MODULES = [
   NbCardModule,
@@ -58,6 +60,7 @@ const NB_MODULES = [
   NbContextMenuModule,
   NgbModule,
   NbSecurityModule, // *nbIsGranted directive
+  NbAuthModule
 ];
 
 const COMPONENTS = [
@@ -73,6 +76,8 @@ const COMPONENTS = [
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  NgxRegisterComponent,
+  NgxLoginComponent
 ];
 
 const PIPES = [

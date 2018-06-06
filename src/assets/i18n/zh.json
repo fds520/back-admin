@@ -1,0 +1,37 @@
+{
+  "app":{
+    "title":"FManager"
+  },
+  "auth": {
+    "login": {
+      "signIn": "登入",
+      "signTitle":"请用你的手机号登入",
+      "failed":"失败啦",
+      "success":"成功",
+      "emailAddress":"邮箱",
+      "phone":"手机号",
+      "password":"密码",
+      "emailRequired":"请填写你的手机号",
+      "emailError":"请正确填写你的手机号",
+      "passwordRequired":"请填写你的密码",
+      "passwordLengthError":"密码长度错误",
+      "rememberMe":"记住我",
+      "forgotPassword":"忘记密码?",
+      "connectWith":"其他方式登入:",
+      "noAccount":"没有账号？",
+      "signUp":"注册",
+      "loginError":"登入失败，请重试",
+      "loginSuccess":"登入成功"
+    }
+  },
+  "client": {
+    "main": {
+      "aboutSystem": "关于本系统",
+      "description":"我们的目标是聚集在一起，连接最棒的功能和库，创建一个高效的生态系统。",
+      "uiKit":"UI库",
+      "uiDesc": "我们精心制作了启动开发所需的最重要组件。我们的UI工具包与框架无关。 ",
+      "authModel":"安全模块",
+      "authModelDesc":"现在前端身份验证和授权只要一个配置即可完成。"
+    }
+  }
+}

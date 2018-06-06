@@ -1,7 +1,3 @@
-/**
- * Created by fly on 4/3/2018.
- */
-
 import {Component, Inject, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NB_AUTH_OPTIONS, NbAuthSocialLink} from '@nebular/auth/auth.options';
@@ -36,7 +32,7 @@ import {NbTokenService} from '@nebular/auth/services/token/token.service';
         <div class="form-group">
           <label for="input-email" class="sr-only">{{'auth.login.emailAddress' | translate}}</label>
           <input name="email" [(ngModel)]="user.email" id="input-email" pattern=".+@.+\..+"
-                 class="form-control" placeholder="Email address" #email="ngModel"
+                 class="form-control" placeholder="{{'auth.login.phone' | translate}}" #email="ngModel"
                  [class.form-control-danger]="email.invalid && email.touched" autofocus
                  [required]="getConfigValue('forms.validation.email.required')">
           <small class="form-text error" *ngIf="email.invalid && email.touched && email.errors?.required">
@@ -51,7 +47,7 @@ import {NbTokenService} from '@nebular/auth/services/token/token.service';
         <div class="form-group">
           <label for="input-password" class="sr-only">Password</label>
           <input name="password" [(ngModel)]="user.password" type="password" id="input-password"
-                 class="form-control" placeholder="Password" #password="ngModel"
+                 class="form-control" placeholder="{{'auth.login.password' | translate}}" #password="ngModel"
                  [class.form-control-danger]="password.invalid && password.touched"
                  [required]="getConfigValue('forms.validation.password.required')"
                  [minlength]="getConfigValue('forms.validation.password.minLength')"
@@ -137,7 +133,7 @@ export class NgxLoginComponent implements OnInit {
         }, this.redirectDelay);
       }
     }, error => {
-        this.errors.push(error);
+      this.errors.push(error);
     });
   }
 
