@@ -10,6 +10,7 @@ export class AuthService implements CanActivate {
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+
     // 返回值 true: 跳转到当前路由 false: 不跳转到当前路由
     // 当前路由名称
     console.info('转跳登陆页面');
