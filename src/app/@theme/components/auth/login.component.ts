@@ -7,6 +7,7 @@ import {NbAuthService} from '@nebular/auth/services/auth.service';
 import {NbAuthResult} from '@nebular/auth/services/auth-result';
 import {TranslateService} from '@ngx-translate/core';
 import {NbTokenService} from '@nebular/auth/services/token/token.service';
+import {HttpInterceptorService} from '../../../services/http.interceptor.service';
 
 @Component({
   selector: 'ngx-login',
@@ -28,7 +29,8 @@ export class NgxLoginComponent implements OnInit {
               @Inject(NB_AUTH_OPTIONS) protected config = {},
               protected router: Router,
               private nbTokenService: NbTokenService,
-              private translateService: TranslateService) {
+              private translateService: TranslateService,
+              private httpInterceptorService: HttpInterceptorService) {
 
     this.redirectDelay = this.getConfigValue('forms.login.redirectDelay');
     this.showMessages = this.getConfigValue('forms.login.showMessages');
@@ -43,7 +45,11 @@ export class NgxLoginComponent implements OnInit {
   login(): void {
     this.submitted = true;
     console.info(this.user);
+    this.httpInterceptorService.intercept("http:baidu.com", res => {
+
+    });
     this.service.authenticate(this.provider, this.user).subscribe((result: NbAuthResult) => {
+      console.info(123123123);
       this.submitted = false;
       if (result.isSuccess()) {
         this.translateService.get(result.getMessages()[0]).subscribe((res: string) => {

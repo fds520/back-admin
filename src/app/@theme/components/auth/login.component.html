@@ -18,7 +18,7 @@
 
     <div class="form-group">
       <label for="input-email" class="sr-only">{{'auth.login.emailAddress' | translate}}</label>
-      <input name="email" [(ngModel)]="user.email" id="input-email" pattern=".+@.+\..+"
+      <input name="username" [(ngModel)]="user.username" id="input-email" pattern=""
              class="form-control" placeholder="{{'auth.login.phone' | translate}}" #email="ngModel"
              [class.form-control-danger]="email.invalid && email.touched" autofocus
              [required]="getConfigValue('forms.validation.email.required')">
