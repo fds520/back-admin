@@ -21,7 +21,7 @@ export class HttpInterceptorService {
    * @returns {any}
    */
   get(url: string, params?: any): any {
-    console.info('开始请求')
+    console.info('开始请求');
     return this.intercept(this.http.get(url, {headers: this.headers, params: params}));
   }
 
@@ -38,12 +38,13 @@ export class HttpInterceptorService {
   // 将json转换成key -value & 格式
   transformRequest(data) {
     let str = '';
-    for (let i in data) {
-      str += i + '=' + data[i] + '&';
+    for (const i in data) {
+      if (i != null) {
+        str += i + '=' + data[i] + '&';
+      }
     }
     str.substring(0, str.length - 1);
     return str;
-
   };
 
   // 拦截请求的返回值
