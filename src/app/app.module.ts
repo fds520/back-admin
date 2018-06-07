@@ -16,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpInterceptorService} from './services/http.interceptor.service';
+import {HttpClientUtils} from './services/http-client-utils';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -40,6 +42,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
+    HttpInterceptorService,
+    HttpClientUtils
   ],
 })
 export class AppModule {

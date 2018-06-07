@@ -30,7 +30,7 @@ export class NgxLoginComponent implements OnInit {
               protected router: Router,
               private nbTokenService: NbTokenService,
               private translateService: TranslateService,
-              private httpInterceptorService: HttpInterceptorService) {
+              private httpClientUtils: HttpInterceptorService) {
 
     this.redirectDelay = this.getConfigValue('forms.login.redirectDelay');
     this.showMessages = this.getConfigValue('forms.login.showMessages');
@@ -45,10 +45,14 @@ export class NgxLoginComponent implements OnInit {
   login(): void {
     this.submitted = true;
     console.info(this.user);
-    this.httpInterceptorService.intercept("http:baidu.com", res => {
 
+    this.httpClientUtils.post('http://localhost:8091/api/v1/web/login',
+      {'username': '1231231', 'password': '123231'}).subscribe(result => {
+
+        // 请求成功处理数据
+        console.info(result.data);
     });
-    this.service.authenticate(this.provider, this.user).subscribe((result: NbAuthResult) => {
+    /*this.service.authenticate(this.provider, this.user).subscribe((result: NbAuthResult) => {
       console.info(123123123);
       this.submitted = false;
       if (result.isSuccess()) {
@@ -69,7 +73,7 @@ export class NgxLoginComponent implements OnInit {
       }
     }, error => {
       this.errors.push(error);
-    });
+    });*/
   }
 
   getConfigValue(key: string): any {
