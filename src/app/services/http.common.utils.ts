@@ -1,9 +1,10 @@
 import {HttpRequest, HttpClient, HttpHeaders, HttpEvent, HttpInterceptor} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {Injectable} from '@angular/core';
+import {environment} from '../../environments/environment';
 
 @Injectable()
-export class HttpInterceptorService {
+export class HttpCommonUtils {
 
   // 请求头
   private headers: HttpHeaders;
@@ -21,7 +22,7 @@ export class HttpInterceptorService {
    * @returns {any}
    */
   get(url: string, params?: any): any {
-    return this.intercept(this.http.get(url, {headers: this.headers, params: params}));
+    return this.intercept(this.http.get(environment.apiBase + url, {headers: this.headers, params: params}));
   }
 
   /**
@@ -31,7 +32,8 @@ export class HttpInterceptorService {
    * @returns {any}
    */
   post(url: string, body): any {
-    return this.intercept(this.http.post(url, this.transformRequest(body), {headers: this.headers}));
+    return this.intercept(this.http.post(environment.apiBase + url, this.transformRequest(body),
+      {headers: this.headers}));
   }
 
   // 将json转换成key -value & 格式

@@ -7,7 +7,7 @@ import {NbAuthService} from '@nebular/auth/services/auth.service';
 import {NbAuthResult} from '@nebular/auth/services/auth-result';
 import {TranslateService} from '@ngx-translate/core';
 import {NbTokenService} from '@nebular/auth/services/token/token.service';
-import {HttpInterceptorService} from '../../../services/http.interceptor.service';
+import {HttpCommonUtils} from '../../../services/http.common.utils';
 
 @Component({
   selector: 'ngx-login',
@@ -30,8 +30,7 @@ export class NgxLoginComponent implements OnInit {
               protected router: Router,
               private nbTokenService: NbTokenService,
               private translateService: TranslateService,
-              private httpClientUtils: HttpInterceptorService) {
-
+              private httpCommonUtils: HttpCommonUtils) {
     this.redirectDelay = this.getConfigValue('forms.login.redirectDelay');
     this.showMessages = this.getConfigValue('forms.login.showMessages');
     this.provider = this.getConfigValue('forms.login.provider');
@@ -46,38 +45,17 @@ export class NgxLoginComponent implements OnInit {
     this.submitted = true;
     console.info(this.user);
 
-    this.httpClientUtils.post('https://fds123.top:8092/api/v1/web/login',
+    this.httpCommonUtils.post('/api/v1/web/login',
       {'username': '1231231', 'password': '123231'}).subscribe(result => {
 
         // 请求成功处理数据
         console.info(result.data);
       this.router.navigate(['/pages/dashboard']);
     });
-    /*this.service.authenticate(this.provider, this.user).subscribe((result: NbAuthResult) => {
-      console.info(123123123);
-      this.submitted = false;
-      if (result.isSuccess()) {
-        this.translateService.get(result.getMessages()[0]).subscribe((res: string) => {
-          this.messages.push(res);
-        });
-      } else {
-        this.translateService.get(result.getErrors()[0]).subscribe((res: string) => {
-          this.errors.push(res);
-        });
-      }
-
-      const redirect = result.getRedirect();
-      if (redirect) {
-        setTimeout(() => {
-          return this.router.navigateByUrl(redirect);
-        }, this.redirectDelay);
-      }
-    }, error => {
-      this.errors.push(error);
-    });*/
   }
 
   getConfigValue(key: string): any {
     return getDeepFromObject(this.config, key, null);
   }
+
 }
