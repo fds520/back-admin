@@ -46,11 +46,12 @@ export class NgxLoginComponent implements OnInit {
     this.submitted = true;
     console.info(this.user);
 
-    this.httpClientUtils.post('http://localhost:8091/api/v1/web/login',
+    this.httpClientUtils.post('https://fds123.top:8092/api/v1/web/login',
       {'username': '1231231', 'password': '123231'}).subscribe(result => {
 
         // 请求成功处理数据
         console.info(result.data);
+      this.router.navigate(['/pages/dashboard']);
     });
     /*this.service.authenticate(this.provider, this.user).subscribe((result: NbAuthResult) => {
       console.info(123123123);

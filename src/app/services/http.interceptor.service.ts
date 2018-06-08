@@ -21,7 +21,6 @@ export class HttpInterceptorService {
    * @returns {any}
    */
   get(url: string, params?: any): any {
-    console.info('开始请求');
     return this.intercept(this.http.get(url, {headers: this.headers, params: params}));
   }
 
@@ -66,7 +65,7 @@ export class HttpInterceptorService {
       }, (err) => {
 
         // 请求错误
-        console.info(err)
+        console.info(err);
         console.info('http请求错误');
         observer.error(err);
       }, () => {
