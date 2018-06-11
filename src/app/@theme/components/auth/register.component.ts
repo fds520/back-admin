@@ -1,10 +1,5 @@
-/**
- * @license
- * Copyright Akveo. All Rights Reserved.
- * Licensed under the MIT License. See License.txt in the project root for license information.
- */
-import { Component, Inject } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, Inject} from '@angular/core';
+import {Router} from '@angular/router';
 import {NB_AUTH_OPTIONS} from '@nebular/auth/auth.options';
 import {getDeepFromObject} from '@nebular/auth/helpers';
 import {NbAuthService} from '@nebular/auth/services/auth.service';
@@ -35,7 +30,6 @@ export class NgxRegisterComponent {
 
   register(): void {
     this.submitted = true;
-    // encode password
     this.service.register(this.provider, this.user).subscribe((result: NbAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {
