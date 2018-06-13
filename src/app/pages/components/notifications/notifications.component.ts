@@ -5,7 +5,6 @@ import 'style-loader!angular2-toaster/toaster.css';
 
 @Component({
   selector: 'ngx-notifications',
-  styleUrls: ['./notifications.component.scss'],
   templateUrl: './notifications.component.html',
 })
 export class NotificationsComponent {
@@ -15,11 +14,9 @@ export class NotificationsComponent {
   dateRange = []; // [ new Date(), addDays(new Date(), 3) ];
 
   onChange(result: Date): void {
-    console.log('onChange: ', result);
   }
 
   getWeek(result: Date): void {
-    console.log('week: ', '');
   }
   config: ToasterConfig;
 
