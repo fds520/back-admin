@@ -11,6 +11,16 @@ import 'style-loader!angular2-toaster/toaster.css';
 export class NotificationsComponent {
   constructor(private toasterService: ToasterService) {}
 
+  date = null; // new Date();
+  dateRange = []; // [ new Date(), addDays(new Date(), 3) ];
+
+  onChange(result: Date): void {
+    console.log('onChange: ', result);
+  }
+
+  getWeek(result: Date): void {
+    console.log('week: ', '');
+  }
   config: ToasterConfig;
 
   position = 'toast-top-right';

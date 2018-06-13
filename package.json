@@ -25,6 +25,7 @@
     "@agm/core": "1.0.0-beta.2",
     "@angular/animations": "6.0.0",
     "@angular/common": "6.0.0",
+    "@angular/cdk": "6.0.0",
     "@angular/compiler": "6.0.0",
     "@angular/core": "6.0.0",
     "@angular/forms": "6.0.0",
@@ -68,7 +69,7 @@
     "typeface-exo": "0.0.22",
     "web-animations-js": "2.2.5",
     "zone.js": "^0.8.26",
-    "ng-zorro-antd": "^0.7.1"
+    "ng-zorro-antd": "^1.0.0"
   },
   "devDependencies": {
     "@angular/cli": "6.0.0",

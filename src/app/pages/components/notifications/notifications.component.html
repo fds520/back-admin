@@ -1,3 +1,14 @@
+<button nz-button nzType="primary">Primary</button>
+<button nz-button nzType="default">Default</button>
+<button nz-button nzType="dashed">Dashed</button>
+<button nz-button nzType="danger">Danger</button>
+<nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)" nzShowTime></nz-date-picker>
+<br>
+<nz-month-picker [(ngModel)]="date" (ngModelChange)="onChange($event)" nzPlaceHolder="Select month"></nz-month-picker>
+<br>
+<nz-range-picker [(ngModel)]="dateRange" (ngModelChange)="onChange($event)" nzShowTime></nz-range-picker>
+<br>
+<nz-week-picker [(ngModel)]="date" (ngModelChange)="getWeek($event)" nzPlaceHolder="Select week"></nz-week-picker>
 <nb-card>
   <nb-card-header>
     Toaster configuration

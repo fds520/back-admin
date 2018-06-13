@@ -17,14 +17,20 @@ import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpCommonUtils} from './services/http.common.utils';
+import {NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+/** 配置 angular i18n **/
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
+registerLocaleData(zh);
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgZorroAntdModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule.forRoot(),
@@ -41,6 +47,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: NZ_I18N, useValue: zh_CN },
     HttpCommonUtils
   ],
 })

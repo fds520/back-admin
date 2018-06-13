@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import {AuthService} from '../auth.service';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 const routes: Routes = [{
   path: '',
@@ -48,7 +49,7 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), NgZorroAntdModule],
   exports: [RouterModule],
   providers: [AuthService]
 })
