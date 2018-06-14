@@ -30,6 +30,7 @@ export class NgxRegisterComponent {
 
   register(): void {
     this.submitted = true;
+    // encode password
     this.service.register(this.provider, this.user).subscribe((result: NbAuthResult) => {
       this.submitted = false;
       if (result.isSuccess()) {

@@ -4,6 +4,7 @@
   },
   "auth": {
     "login": {
+      "username": "用户名",
       "signIn": "登入",
       "signTitle":"请用你的手机号登入",
       "failed":"失败啦",
@@ -11,9 +12,11 @@
       "emailAddress":"邮箱",
       "phone":"手机号",
       "password":"密码",
-      "emailRequired":"请填写你的手机号",
+      "usernameRequired":"请填写你的用户名",
+      "usernameError": "请正确填写你的用户名",
       "emailError":"请正确填写你的手机号",
       "passwordRequired":"请填写你的密码",
+      "passwordError":"请正确填写你的密码",
       "passwordLengthError":"密码长度错误",
       "rememberMe":"记住我",
       "forgotPassword":"忘记密码?",
