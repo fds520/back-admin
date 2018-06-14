@@ -10,13 +10,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient} from '@angular/common/http';
 import { CoreModule } from './@core/core.module';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ThemeModule } from './@theme/theme.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpCommonUtils} from './services/http.common.utils';
+import {StorageUtils} from './services/storage.utils';
+import {CookieService} from 'ngx-cookie-service';
 import {NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -48,7 +49,9 @@ registerLocaleData(zh);
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
     { provide: NZ_I18N, useValue: zh_CN },
-    HttpCommonUtils
+    HttpCommonUtils,
+    CookieService,
+    StorageUtils
   ],
 })
 export class AppModule {
