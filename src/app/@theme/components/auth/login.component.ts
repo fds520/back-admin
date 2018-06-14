@@ -27,14 +27,19 @@ export class NgxLoginComponent {
     this.submitted = true;
     this.showMessages.error = true;
     this.submitted = false;
-    this.storageUtils.setLocalStorage('add', '12312');
-    this.storageUtils.setCookie('uuid', 'sfdsfewfew');
+    console.info(this.user.username);
+    console.info(md5(this.user.password + 'fds'));
     this.httpCommonUtils.post('/web/api/v1/login',
       {'username': this.user.username, 'password': md5(this.user.password + 'fds')}).subscribe(result => {
 
         // 请求成功处理数据
         console.info(result.data);
-        this.router.navigate(['/pages/dashboard']);
+        if (result.data.status === '1') {
+          this.storageUtils.setLocalStorage('userInfo', '12312');
+
+          // 登陆成功
+          this.router.navigate(['/pages/dashboard']);
+        }
     });
   }
 

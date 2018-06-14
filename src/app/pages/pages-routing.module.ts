@@ -13,15 +13,19 @@ const routes: Routes = [{
   children: [{
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthService]
   }, {
     path: 'ui-features',
     loadChildren: './ui-features/ui-features.module#UiFeaturesModule',
+    canActivate: [AuthService]
   }, {
     path: 'components',
     loadChildren: './components/components.module#ComponentsModule',
+    canActivate: [AuthService]
   }, {
     path: 'maps',
     loadChildren: './maps/maps.module#MapsModule',
+    canActivate: [AuthService]
   }, {
     path: 'charts',
     loadChildren: './charts/charts.module#ChartsModule',
@@ -29,15 +33,19 @@ const routes: Routes = [{
   }, {
     path: 'editors',
     loadChildren: './editors/editors.module#EditorsModule',
+    canActivate: [AuthService]
   }, {
     path: 'forms',
     loadChildren: './forms/forms.module#FormsModule',
+    canActivate: [AuthService]
   }, {
     path: 'tables',
     loadChildren: './tables/tables.module#TablesModule',
+    canActivate: [AuthService]
   }, {
     path: 'miscellaneous',
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
+    canActivate: [AuthService]
   }, {
     path: '',
     redirectTo: 'dashboard',

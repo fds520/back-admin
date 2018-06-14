@@ -2,17 +2,20 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
-
+import {StorageUtils} from './storage.utils';
+import {Router} from '@angular/router';
 @Injectable()
 export class HttpCommonUtils {
 
   // 请求头
   private headers: HttpHeaders;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private storageUtils: StorageUtils,
+              private router: Router) {
     // 请求头配置
-    this.headers = new HttpHeaders()
-      .set('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    this.headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8')
+      .set('token', storageUtils.getLocalStorage('userInfo'));
   }
 
   /**
@@ -58,7 +61,8 @@ export class HttpCommonUtils {
         } else if (code === 10001) {
           console.info('参数错误');
         } else if (code === 10002) {
-          console.info('token非法');
+          console.info('token非法；重新登陆');
+          this.router.navigate(['/auth/login']);
         } else {
           console.info('服务器偷懒了~~');
         }
