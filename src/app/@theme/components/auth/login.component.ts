@@ -5,6 +5,7 @@ import {getDeepFromObject} from '@nebular/auth/helpers';
 import {HttpCommonUtils} from '../../../services/http.common.utils';
 import md5 from 'js-md5';
 import {StorageUtils} from '../../../services/storage.utils'
+import {ApiUrl} from '../../../services/api.url';
 @Component({
   selector: 'ngx-login',
   templateUrl: './login.component.html',
@@ -25,20 +26,28 @@ export class NgxLoginComponent {
 
   login(): void {
     this.submitted = true;
-    this.showMessages.error = true;
-    this.submitted = false;
-    console.info(this.user.username);
-    console.info(md5(this.user.password + 'fds'));
-    this.httpCommonUtils.post('/web/api/v1/login',
+    this.httpCommonUtils.post(ApiUrl.user.login,
       {'username': this.user.username, 'password': md5(this.user.password + 'fds')}).subscribe(result => {
+        const resultData = result.data;
+        if (resultData.status === '1') {
 
-        // 请求成功处理数据
-        console.info(result.data);
-        if (result.data.status === '1') {
-          this.storageUtils.setLocalStorage('userInfo', '12312');
+          // 设置token
+          this.storageUtils.setLocalStorage('token', resultData.token);
 
-          // 登陆成功
+          // 登陆成功跳转首页
           this.router.navigate(['/pages/dashboard']);
+        } else if (resultData.status === '2') {
+
+          // 密码错误
+          this.submitted = false;
+          this.showMessages.error = true;
+          this.showMessages.msg = '密码错误';
+        } else if (resultData.status === '0') {
+
+          // 用户不存在
+          this.submitted = false;
+          this.showMessages.error = true;
+          this.showMessages.msg = '用户不存在';
         }
     });
   }

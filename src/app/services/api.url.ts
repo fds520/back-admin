@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
-@Injectable()
-export class ApiUrl {
-
+export const ApiUrl = {
+  user: {
+    // 登录接口
+    login: environment.apiBase + '/web/api/v1/login'
+  }
 }

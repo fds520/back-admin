@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
-import {AuthService} from '../auth.service';
+import {AuthService} from '../services/auth.service';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 const routes: Routes = [{

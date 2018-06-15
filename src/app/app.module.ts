@@ -19,6 +19,7 @@ import {HttpCommonUtils} from './services/http.common.utils';
 import {StorageUtils} from './services/storage.utils';
 import {CookieService} from 'ngx-cookie-service';
 import {NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd';
+import {LoginAuthService} from './services/login.auth.service'
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -51,7 +52,8 @@ registerLocaleData(zh);
     { provide: NZ_I18N, useValue: zh_CN },
     HttpCommonUtils,
     CookieService,
-    StorageUtils
+    StorageUtils,
+    LoginAuthService
   ],
 })
 export class AppModule {

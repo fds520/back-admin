@@ -1,5 +1,6 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import {LoginAuthService} from './services/login.auth.service'
 import {
   NbAuthComponent,
   NbLogoutComponent,
@@ -14,30 +15,37 @@ const routes: Routes = [
   {
     path: 'auth',
     component: NbAuthComponent,
+    canActivate: [LoginAuthService],
     children: [
       {
         path: '',
         component: NgxLoginComponent,
+        canActivate: [LoginAuthService],
       },
       {
         path: 'login',
         component: NgxLoginComponent,
+        canActivate: [LoginAuthService],
       },
       {
         path: 'register',
         component: NgxRegisterComponent,
+        canActivate: [LoginAuthService],
       },
       {
         path: 'logout',
         component: NbLogoutComponent,
+        canActivate: [LoginAuthService],
       },
       {
         path: 'request-password',
         component: NbRequestPasswordComponent,
+        canActivate: [LoginAuthService],
       },
       {
         path: 'reset-password',
         component: NbRequestPasswordComponent,
+        canActivate: [LoginAuthService],
       },
     ],
   },
