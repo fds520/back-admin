@@ -23,14 +23,6 @@ const routes: Routes = [{
     loadChildren: './components/components.module#ComponentsModule',
     canActivate: [AuthService]
   }, {
-    path: 'maps',
-    loadChildren: './maps/maps.module#MapsModule',
-    canActivate: [AuthService]
-  }, {
-    path: 'charts',
-    loadChildren: './charts/charts.module#ChartsModule',
-    canActivate: [AuthService]
-  }, {
     path: 'editors',
     loadChildren: './editors/editors.module#EditorsModule',
     canActivate: [AuthService]
