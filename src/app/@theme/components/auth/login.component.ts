@@ -49,6 +49,11 @@ export class NgxLoginComponent {
           this.showMessages.error = true;
           this.showMessages.msg = '用户不存在';
         }
+    }, (err) => {
+      console.info('登陆请求失败，刷新页面');
+      this.submitted = false;
+      this.showMessages.error = true;
+      this.showMessages.msg = '页面请求出错，请重试';
     });
   }
 

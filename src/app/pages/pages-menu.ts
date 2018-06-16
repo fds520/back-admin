@@ -2,22 +2,18 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'Dashboard',
+    title: '主页',
     icon: 'nb-home',
     link: '/pages/dashboard',
     home: true,
   },
   {
-    title: 'FEATURES',
-    group: true,
-  },
-  {
-    title: 'UI Features',
+    title: '样式',
     icon: 'nb-keypad',
     link: '/pages/ui-features',
     children: [
       {
-        title: 'Buttons',
+        title: '按钮',
         link: '/pages/ui-features/buttons',
       },
       {
@@ -98,16 +94,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Smart Table',
         link: '/pages/tables/smart-table',
-      },
-    ],
-  },
-  {
-    title: 'Miscellaneous',
-    icon: 'nb-shuffle',
-    children: [
-      {
-        title: '404',
-        link: '/pages/miscellaneous/404',
       },
     ],
   }
