@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-
+import {NgModule} from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatusCardComponent } from './status-card/status-card.component';
+import {EditorComponent} from './wang-editor/editor.component';
 
 @NgModule({
   imports: [
@@ -12,7 +12,8 @@ import { StatusCardComponent } from './status-card/status-card.component';
   ],
   declarations: [
     DashboardComponent,
-    StatusCardComponent
+    StatusCardComponent,
+    EditorComponent
   ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

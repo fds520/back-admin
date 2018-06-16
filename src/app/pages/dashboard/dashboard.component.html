@@ -22,4 +22,9 @@
       <i class="nb-coffee-maker"></i>
     </ngx-status-card>
   </div>
+
+  <div>
+    <ngx-editor (onPostData)="PostData($event)"></ngx-editor>
+    <button (click)="publishTopic()">获取内容</button>
+  </div>
 </div>

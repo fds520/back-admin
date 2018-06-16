@@ -24,8 +24,8 @@
   "dependencies": {
     "@agm/core": "1.0.0-beta.2",
     "@angular/animations": "6.0.0",
-    "@angular/common": "6.0.0",
     "@angular/cdk": "6.0.0",
+    "@angular/common": "6.0.0",
     "@angular/compiler": "6.0.0",
     "@angular/core": "6.0.0",
     "@angular/forms": "6.0.0",
@@ -48,11 +48,14 @@
     "font-awesome": "4.7.0",
     "intl": "1.2.5",
     "ionicons": "2.0.1",
+    "js-md5": "^0.7.3",
     "leaflet": "1.2.0",
     "nebular-icons": "1.0.6",
+    "ng-zorro-antd": "^1.0.0",
     "ng2-ckeditor": "1.1.13",
     "ng2-smart-table": "1.2.2",
     "ng2-tree": "2.0.0-rc.4",
+    "ngx-cookie-service": "^1.0.10",
     "ngx-echarts": "2.0.1",
     "node-sass": "^4.9.0",
     "normalize.css": "6.0.0",
@@ -63,11 +66,9 @@
     "socicon": "3.0.5",
     "tinymce": "4.5.7",
     "typeface-exo": "0.0.22",
+    "wangeditor": "^3.1.1",
     "web-animations-js": "2.2.5",
-    "zone.js": "^0.8.26",
-    "ng-zorro-antd": "^1.0.0",
-    "js-md5": "^0.7.3",
-    "ngx-cookie-service": "^1.0.10"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular/cli": "6.0.0",
