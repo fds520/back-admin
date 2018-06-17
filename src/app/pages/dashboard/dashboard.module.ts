@@ -4,7 +4,6 @@ import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { StatusCardComponent } from './status-card/status-card.component';
 import {EditorComponent} from './wang-editor/editor.component';
-
 @NgModule({
   imports: [
     ThemeModule,

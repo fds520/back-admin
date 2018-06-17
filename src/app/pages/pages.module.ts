@@ -19,7 +19,7 @@ const PAGES_COMPONENTS = [
     NgZorroAntdModule
   ],
   declarations: [
-    ...PAGES_COMPONENTS,
+    ...PAGES_COMPONENTS
   ],
   exports: [
     NgZorroAntdModule

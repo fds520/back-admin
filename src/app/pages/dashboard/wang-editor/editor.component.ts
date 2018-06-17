@@ -15,6 +15,25 @@ export class EditorComponent {
   ngAfterViewInit() {
     this.editor = new WangEditor(this.el.nativeElement.querySelector('#editorElem'));
     this.editor.customConfig.qiniu = true;
+    this.editor.customConfig.menus = [
+      'head',
+      'bold',
+      'fontSize',
+      'fontName',
+      'italic',
+      'underline',
+      'strikeThrough',
+      'foreColor',
+      'link',
+      'list',
+      'justify',
+      'quote',
+      'emoticon',
+      'image',
+      'table',
+      'undo',
+      'redo'
+    ];
     this.editor.create();
     this.uploadInit();
   }
@@ -59,7 +78,6 @@ export class EditorComponent {
         'FilesAdded': function(up, files) {
           plupload.each(files, function(file) {
             // 文件添加进队列后,处理相关的事情
-            console.info(file);
           });
         },
         'BeforeUpload': function(up, file) {
@@ -72,7 +90,6 @@ export class EditorComponent {
           const sourceLink = up.getOption('domain') + '/' + $.parseJSON(info).key; // 获取上传成功后的文件的Url
           // 插入图片到editor
           ed.cmd.do('insertHtml', '<img src="' + sourceLink + '" style="max-width:100%;"/>')
-          console.info(sourceLink);
         },
         'Error': function(up, err, errTip) {
           // 上传出错时,处理相关的事情
