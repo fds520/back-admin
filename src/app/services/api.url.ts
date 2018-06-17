@@ -4,5 +4,8 @@ export const ApiUrl = {
   user: {
     // 登录接口
     login: environment.apiBase + '/web/api/v1/login'
+  },
+  qiniu: {
+    getToken: environment.apiBase + '/web/api/v1/fileUpload/getAuth'
   }
 }

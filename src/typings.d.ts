@@ -9,7 +9,7 @@ declare var module: NodeModule;
 interface NodeModule {
   id: string;
 }
-
+declare var $: any;
+declare var Qiniu: any;
+declare var plupload: any;
 declare var tinymce: any;
-
-declare var echarts: any;

@@ -44,7 +44,10 @@
               "node_modules/tinymce/themes/modern/theme.min.js",
               "node_modules/tinymce/plugins/link/plugin.min.js",
               "node_modules/tinymce/plugins/paste/plugin.min.js",
-              "node_modules/tinymce/plugins/table/plugin.min.js"
+              "node_modules/tinymce/plugins/table/plugin.min.js",
+              "src/assets/js/jquery-1.9.1.min.js",
+              "src/assets/js/plupload/plupload.full.min.js",
+              "src/assets/js/qiniu.js"
             ]
           },
           "configurations": {
@@ -97,7 +100,10 @@
               "node_modules/tinymce/themes/modern/theme.min.js",
               "node_modules/tinymce/plugins/link/plugin.min.js",
               "node_modules/tinymce/plugins/paste/plugin.min.js",
-              "node_modules/tinymce/plugins/table/plugin.min.js"
+              "node_modules/tinymce/plugins/table/plugin.min.js",
+              "src/assets/js/jquery-1.9.1.min.js",
+              "src/assets/js/plupload/plupload.full.min.js",
+              "src/assets/js/qiniu.js"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",

@@ -21,7 +21,7 @@ export class DashboardComponent {
     alert(topicContent);
   }
 
-  PostData(event): void {
+  postData(event): void {
     console.info(event);
   }
 }

@@ -1,6 +1,6 @@
 import {ElementRef, Output, EventEmitter, Component} from '@angular/core';
 import * as WangEditor from 'wangeditor/release/wangEditor.js';
-import {ApiUrl} from '../../../services/api.url';
+import {ApiUrl} from '../../services/api.url';
 
 @Component({
   selector: 'ngx-editor',
