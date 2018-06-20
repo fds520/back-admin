@@ -4,7 +4,7 @@
   },
   "auth": {
     "login": {
-      "username": "用户名",
+      "userName": "用户名",
       "signIn": "登入",
       "signTitle":"请用你的手机号登入",
       "failed":"失败啦",

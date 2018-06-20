@@ -55,12 +55,13 @@ export class HttpCommonUtils {
     return Observable.create((observer) => {
       observable.subscribe(res => {
         const code = res.code;
-        if (code === 10000) {
+        console.info(res);
+        if (code === '10000') {
           // 请求验证通过
           observer.next(res);
-        } else if (code === 10001) {
+        } else if (code === '10001') {
           console.info('参数错误 1确定刷新页面，取消返回');
-        } else if (code === 10002) {
+        } else if (code === '10002') {
           console.info('token非法；重新登陆');
           this.router.navigate(['/auth/login']);
         } else {

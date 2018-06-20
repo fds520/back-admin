@@ -1,6 +1,6 @@
 import { Component, ViewChild} from '@angular/core';
 import {EditorComponent} from './wang-editor/editor.component';
-
+import {HttpCommonUtils} from '../../services/http.common.utils'
 @Component({
   selector: 'ngx-dashboard',
   styleUrls: ['./dashboard.component.scss'],
@@ -9,7 +9,8 @@ import {EditorComponent} from './wang-editor/editor.component';
 export class DashboardComponent {
   @ViewChild(EditorComponent) editor: EditorComponent;
 
-  constructor() {}
+  constructor(public httpCommonUtils: HttpCommonUtils) {
+  }
 
   publishTopic() {
 
@@ -23,5 +24,13 @@ export class DashboardComponent {
 
   postData(event): void {
     console.info(event);
+  }
+
+  test1(): void {
+    console.info('12312313')
+    this.httpCommonUtils.get('http://localhost:8091/api/recordinfo/getlist', {}).subscribe((result) => {
+
+    });
+    console.info('结束')
   }
 }

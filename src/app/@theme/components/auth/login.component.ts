@@ -27,7 +27,7 @@ export class NgxLoginComponent {
   login(): void {
     this.submitted = true;
     this.httpCommonUtils.post(ApiUrl.user.login,
-      {'username': this.user.username, 'password': md5(this.user.password + 'fds')}).subscribe(result => {
+      {'userName': this.user.userName, 'password': md5(this.user.password + 'fds')}).subscribe(result => {
         const resultData = result.data;
         if (resultData.status === '1') {
 
