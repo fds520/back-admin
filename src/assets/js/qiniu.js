@@ -368,7 +368,7 @@ function QiniuJsSDK() {
 
 
                 up.setOption({
-                    'url': 'http://upload.qiniu.com/',
+                    'url': 'https://fds123.top:8094/',
                     'multipart': true,
                     'chunk_size': undefined,
                     'multipart_params': multipart_params_obj
