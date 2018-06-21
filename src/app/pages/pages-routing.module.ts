@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DiaryComponent } from './diary/diary.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import {AuthService} from '../services/auth.service';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
@@ -13,6 +14,10 @@ const routes: Routes = [{
   children: [{
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthService]
+  }, {
+    path: 'diary',
+    component: DiaryComponent,
     canActivate: [AuthService]
   }, {
     path: 'ui-features',

@@ -1,15 +1,18 @@
 import { Component, ViewChild} from '@angular/core';
+import {EditorComponent} from '../components/wang-editor/editor.component';
 import {HttpCommonUtils} from '../../services/http.common.utils'
 @Component({
   selector: 'ngx-dashboard',
-  styleUrls: ['./dashboard.component.scss'],
-  templateUrl: './dashboard.component.html',
+  styleUrls: ['./diary.component.scss'],
+  templateUrl: './diary.component.html',
 })
-export class DashboardComponent {
+export class DiaryComponent {
+  @ViewChild(EditorComponent) editor: EditorComponent;
+
   constructor(public httpCommonUtils: HttpCommonUtils) {
   }
 
-  /*publishTopic() {
+  publishTopic() {
 
     const topicContent = this.editor.clickHandle();
     if (!topicContent) {
@@ -21,7 +24,7 @@ export class DashboardComponent {
 
   postData(event): void {
     console.info(event);
-  }*/
+  }
 
   test1(): void {
     console.info('12312313')

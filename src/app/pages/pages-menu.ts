@@ -8,6 +8,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: '日记',
+    icon: 'nb-home',
+    link: '/pages/diary'
+  },
+  {
     title: '样式',
     icon: 'nb-keypad',
     link: '/pages/ui-features',
