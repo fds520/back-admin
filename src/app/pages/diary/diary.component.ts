@@ -12,25 +12,17 @@ export class DiaryComponent {
   constructor(public httpCommonUtils: HttpCommonUtils) {
   }
 
-  publishTopic() {
+  saveDiary() {
 
+    // 获取富文本的内容
     const topicContent = this.editor.clickHandle();
     if (!topicContent) {
       alert('请输入内容！');
       return;
     }
-    alert(topicContent);
+
+    // 保存数据库
+
   }
 
-  postData(event): void {
-    console.info(event);
-  }
-
-  test1(): void {
-    console.info('12312313')
-    this.httpCommonUtils.get('http://localhost:8091/api/recordinfo/getlist', {}).subscribe((result) => {
-
-    });
-    console.info('结束')
-  }
 }
