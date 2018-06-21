@@ -2,7 +2,7 @@ import { Component, ViewChild} from '@angular/core';
 import {EditorComponent} from '../components/wang-editor/editor.component';
 import {HttpCommonUtils} from '../../services/http.common.utils'
 @Component({
-  selector: 'ngx-dashboard',
+  selector: 'ngx-diary',
   styleUrls: ['./diary.component.scss'],
   templateUrl: './diary.component.html',
 })

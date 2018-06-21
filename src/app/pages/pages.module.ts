@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { DiaryComponent } from './diary/diary.component';
+import { DiaryModule } from './diary/diary.module';
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
 import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
@@ -16,7 +16,7 @@ const PAGES_COMPONENTS = [
     PagesRoutingModule,
     ThemeModule,
     DashboardModule,
-    DiaryComponent,
+    DiaryModule,
     MiscellaneousModule,
     NgZorroAntdModule
   ],

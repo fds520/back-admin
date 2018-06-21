@@ -9,7 +9,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: '日记',
-    icon: 'nb-home',
+    icon: 'nb-compose',
     link: '/pages/diary'
   },
   {
