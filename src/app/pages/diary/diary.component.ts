@@ -21,7 +21,7 @@ export class DiaryComponent {
     const content = this.editor.clickHandle();
     console.info(content);
     if ('<p><br></p>' === content) {
-      this.notice.showNotice('', '', '');
+      this.notice.showNotice('success', '提示', '内容为空');
     }
 
     // 保存数据库

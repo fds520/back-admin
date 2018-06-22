@@ -10,7 +10,8 @@ export class NoticeComponent {
 
   constructor(private toasterService: ToasterService) {
     this.config = new ToasterConfig({
-      positionClass: 'toast-top-center'
+      positionClass: 'toast-top-center',
+      limit: 5
     });
   }
 
@@ -18,9 +19,9 @@ export class NoticeComponent {
 
   showNotice(type: string, title: string, body: string): void {
     const toast: Toast = {
-      type: 'warning',
-      title: '提示',
-      body: '警告',
+      type: type,
+      title: title,
+      body: body,
       timeout: 5000,
       showCloseButton: true,
       bodyOutputType: BodyOutputType.TrustedHtml
