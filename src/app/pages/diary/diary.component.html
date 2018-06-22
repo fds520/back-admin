@@ -1,6 +1,10 @@
 <nb-card>
   <nb-card-header>日记~~</nb-card-header>
   <nb-card-body>
+    <ngx-notice></ngx-notice>
+    <div class="form-group">
+      <input type="text" placeholder="标题~~" class="form-control form-control-success">
+    </div>
     <div class="row show-grid">
       <div class="col-md-12">
         <ngx-editor></ngx-editor>
@@ -10,6 +14,7 @@
       <div class="col-6 col-sm-4">
       </div>
       <div class="col-6 col-sm-4">
+        <nb-checkbox status="success" class="col-sm-4">公开</nb-checkbox>
         <button class="btn btn-hero-primary btn-demo" (click)="saveDiary()">保存心情~~</button>
       </div>
       <div class="col-6 col-sm-4">
