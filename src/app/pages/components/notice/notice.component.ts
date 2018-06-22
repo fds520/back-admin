@@ -8,14 +8,14 @@ import 'style-loader!angular2-toaster/toaster.css';
 })
 export class NoticeComponent {
 
+  public config: ToasterConfig;
+
   constructor(private toasterService: ToasterService) {
     this.config = new ToasterConfig({
       positionClass: 'toast-top-center',
       limit: 5
     });
   }
-
-  private config: ToasterConfig;
 
   showNotice(type: string, title: string, body: string): void {
     const toast: Toast = {
