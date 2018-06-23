@@ -10,5 +10,5 @@
 
 export const environment = {
   production: false,
-  apiBase: 'http://localhost:8091'
+  apiBase: 'http://localhost:8091/web/api/v1'
 };

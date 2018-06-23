@@ -2,9 +2,12 @@ import {environment} from '../../environments/environment';
 export const ApiUrl = {
   user: {
     // 登录接口
-    login: environment.apiBase + '/web/api/v1/login'
+    login: environment.apiBase + '/login'
   },
   qiniu: {
-    getToken: environment.apiBase + '/web/api/v1/fileUpload/getAuth'
+    getToken: environment.apiBase + '/fileUpload/getAuth'
+  },
+  diaryInfo: {
+    save: environment.apiBase + '/diaryInfo/save'
   }
 }

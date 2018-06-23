@@ -5,5 +5,5 @@
  */
 export const environment = {
   production: true,
-  apiBase: 'https://fds123.top:8092'
+  apiBase: 'https://fds123.top:8092/web/api/v1'
 };
