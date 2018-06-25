@@ -14,9 +14,9 @@ export class DiaryComponent {
 
   @ViewChild(NoticeComponent) notice: NoticeComponent;
 
-  private title: string;
+  public title: string;
 
-  private isPublic: Boolean = false;
+  public isPublic: Boolean = false;
 
   constructor(private httpCommonUtils: HttpCommonUtils) {
   }
