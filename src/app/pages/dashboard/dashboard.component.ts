@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ApiUrl} from '../../services/api.url';
 @Component({
   selector: 'ngx-dashboard',
   styleUrls: ['./dashboard.component.scss'],
@@ -14,7 +15,7 @@ export class DashboardComponent implements OnInit {
     let websocket = null;
     // 判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-      websocket = new WebSocket('ws://192.168.20.64:8091/simple-life/webSocket?userId=wrwefesdfwetrwe324324');
+      websocket = new WebSocket(ApiUrl.webSocket.user + '?userId=wrwefesdfwetrwe324324');
     } else {
       alert('当前浏览器 Not support websocket')
     }

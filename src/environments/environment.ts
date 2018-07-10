@@ -10,5 +10,6 @@
 
 export const environment = {
   production: false,
-  apiBase: 'http://localhost:8091/web/api/v1'
+  apiBase: 'http://localhost:8091/web/api/v1',
+  webSocketApi: 'ws://localhost:8091'
 };

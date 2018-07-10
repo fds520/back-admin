@@ -9,5 +9,8 @@ export const ApiUrl = {
   },
   diaryInfo: {
     save: environment.apiBase + '/diaryInfo/save'
+  },
+  webSocket: {
+    user: environment.webSocketApi + '/simple-life/webSocket'
   }
 }
