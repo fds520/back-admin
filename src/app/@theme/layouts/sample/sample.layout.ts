@@ -22,17 +22,17 @@ import { StateService } from '../../../@core/data/state.service';
         <ngx-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></ngx-header>
       </nb-layout-header>
 
-      <nb-sidebar class="menu-sidebar"
+      <!--<nb-sidebar class="menu-sidebar"
                    tag="menu-sidebar"
                    responsive
                    [end]="sidebar.id === 'end'">
-        <nb-sidebar-header>
+        &lt;!&ndash;<nb-sidebar-header>
           <a href="#" class="btn btn-hero-success main-btn">
             <i class="ion ion-social-github"></i> <span>Support Us</span>
           </a>
-        </nb-sidebar-header>
-        <ng-content select="nb-menu"></ng-content>
-      </nb-sidebar>
+        </nb-sidebar-header>&ndash;&gt;
+        &lt;!&ndash;<ng-content select="nb-menu"></ng-content>&ndash;&gt;
+      </nb-sidebar>-->
 
       <nb-layout-column class="main-content">
         <ng-content select="router-outlet"></ng-content>
