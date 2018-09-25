@@ -8,7 +8,7 @@ export const ApiUrl = {
     getToken: environment.apiBase + '/fileUpload/getAuth'
   },
   diaryInfo: {
-    save: environment.apiBase + '/diaryInfo/save'
+    save: environment.apiBase + '/article/save'
   },
   webSocket: {
     user: environment.webSocketApi + '/simple-life/webSocket'

@@ -48,7 +48,8 @@ export class HttpCommonUtils {
     let str = '';
     for (const i in data) {
       if (i != null) {
-        str += i + '=' + data[i] + '&';
+        // 中文字符编码
+        str += i + '=' + encodeURI(data[i]) + '&';
       }
     }
     str.substring(0, str.length - 1);

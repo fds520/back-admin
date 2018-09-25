@@ -1,9 +1,13 @@
 <nb-card>
-  <nb-card-header>日记~~</nb-card-header>
+  <nb-card-header>文章~~</nb-card-header>
   <nb-card-body>
     <ngx-notice></ngx-notice>
     <div class="form-group">
-      <input type="text" [(ngModel)]="title" placeholder="标题~~" class="form-control form-control-success">
+      <input type="text" [(ngModel)]="title" placeholder="请输入文章标题~~" class="form-control form-control-success">
+      <input type="text" [(ngModel)]="introduceInfo" placeholder="请输入文章导语~~" class="form-control form-control-success">
+      <button id="uploadImg" *ngIf="isUpload">上传封面</button>
+      <span id="imgHref"></span>
+      <img *ngIf="!isUpload" src="{{imageAddress}}"/>
     </div>
     <div class="row show-grid">
       <div class="col-md-12">
