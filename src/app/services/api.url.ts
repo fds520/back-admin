@@ -7,8 +7,12 @@ export const ApiUrl = {
   qiniu: {
     getToken: environment.apiBase + '/fileUpload/getAuth'
   },
-  diaryInfo: {
+  article: {
     save: environment.apiBase + '/article/save'
+  },
+  category: {
+    // 获取分类接口
+    list: environment.apiBase + '/category/list'
   },
   webSocket: {
     user: environment.webSocketApi + '/simple-life/webSocket'

@@ -1,4 +1,4 @@
-import { Component, ViewChild} from '@angular/core';
+import { Component, ViewChild, OnInit} from '@angular/core';
 import {EditorComponent} from '../components/wang-editor/editor.component';
 import {NoticeComponent} from '../components/notice/notice.component';
 import {HttpCommonUtils} from '../../services/http.common.utils';
@@ -9,7 +9,8 @@ import {ApiUrl} from '../../services/api.url';
   styleUrls: ['./diary.component.scss'],
   templateUrl: './diary.component.html',
 })
-export class DiaryComponent {
+export class DiaryComponent implements OnInit {
+
   @ViewChild(EditorComponent) editor: EditorComponent;
 
   @ViewChild(NoticeComponent) notice: NoticeComponent;
@@ -26,6 +27,11 @@ export class DiaryComponent {
   public categoryCode: string;
 
   public isPublic: Boolean = false;
+
+  ngOnInit(): void {
+    // 获取分类
+    this.getCategoryList();
+  }
 
   ngAfterViewInit() {
     const thisObj = this;
@@ -81,6 +87,13 @@ export class DiaryComponent {
   constructor(private httpCommonUtils: HttpCommonUtils) {
   }
 
+  getCategoryList() {
+    this.httpCommonUtils.get(ApiUrl.category.list, {}).subscribe((data) => {
+      console.info(data)
+    })
+  }
+
+  // 保存文章
   saveDiary() {
 
     if (this.title === '' || this.title == null) {
@@ -107,21 +120,21 @@ export class DiaryComponent {
     }
 
     console.info(content);
-    this.httpCommonUtils.post(ApiUrl.diaryInfo.save, {
+    this.httpCommonUtils.post(ApiUrl.article.save, {
       'title': this.title,
 
       // 编码过滤 % #@ 等特殊符号，不编码后台无法接收。
-      'content': encodeURI(content),
+      'content': content,
       'isPublic': this.isPublic ? '1' : '0',
       'introduceInfo': this.introduceInfo,
-      'imageAddress': this.imageAddress
+      'imageAddress': this.imageAddress,
+      'categoryCode': '1'
     }).subscribe(() => {
 
       // 保存成功；
       this.notice.showNotice('success', '提示', '保存成功');
       window.location.reload();
     })
-
   }
 
 }

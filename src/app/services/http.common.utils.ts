@@ -61,7 +61,6 @@ export class HttpCommonUtils {
     return Observable.create((observer) => {
       observable.subscribe(res => {
         const code = res.code;
-        console.info(res);
         if (code === 10000) {
           // 请求验证通过
           observer.next(res);
